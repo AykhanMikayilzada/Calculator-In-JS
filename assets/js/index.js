@@ -102,7 +102,7 @@ module.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
   } else {
-    show.push("%");
+    show = [];
     expression.push("%");
     sum.innerText = show.join("");
   }
@@ -111,7 +111,7 @@ plus.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
   } else {
-    show.push("+");
+    show = [];
     expression.push("+");
     sum.innerText = show.join("");
   }
@@ -120,7 +120,7 @@ minus.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
   } else {
-    show.push("-");
+    show = [];
     expression.push("-");
     sum.innerText = show.join("");
   }
@@ -129,16 +129,17 @@ multiplication.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
   } else {
-    show.push("x");
+    show = [];
     expression.push("*");
     sum.innerText = show.join("");
+    console.log(expression);
   }
 });
 division.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
   } else {
-    show.push("/");
+    show = [];
     expression.push("/");
     sum.innerText = show.join("");
   }
