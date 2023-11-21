@@ -129,7 +129,7 @@ multiplication.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
   } else {
-    show.push("*");
+    show.push("x");
     expression.push("*");
     sum.innerText = show.join("");
     console.log(expression);
