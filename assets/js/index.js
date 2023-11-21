@@ -29,7 +29,7 @@ let zeroCount = 0;
 let sum = document.querySelector("#sum");
 
 comma.addEventListener("click", function () {
-  if (sum.innerText == "0") {
+  if (sum.innerText == "") {
     show.push("0,");
     expression.push("0,");
     sum.innerText = show.join("");
@@ -43,9 +43,9 @@ comma.addEventListener("click", function () {
   }
 });
 zero.addEventListener("click", function () {
-    show.push("0");
-    expression.push("0");
-    sum.innerText = show.join("");
+  show.push("0");
+  expression.push("0");
+  sum.innerText = show.join("");
 });
 one.addEventListener("click", function () {
   show.push("1");
@@ -101,8 +101,7 @@ allClearBtn.addEventListener("click", function () {
 module.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
-  }
-  else {
+  } else {
     show = [];
     expression.push("%");
     sum.innerText = show.join("");
@@ -111,8 +110,7 @@ module.addEventListener("click", function () {
 plus.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
-  }
-  else {
+  } else {
     show = [];
     expression.push("+");
     sum.innerText = show.join("");
@@ -121,8 +119,7 @@ plus.addEventListener("click", function () {
 minus.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
-  }
-  else {
+  } else {
     show = [];
     expression.push("-");
     sum.innerText = show.join("");
@@ -131,18 +128,17 @@ minus.addEventListener("click", function () {
 multiplication.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
-  }
-  else {
+  } else {
     show = [];
     expression.push("*");
     sum.innerText = show.join("");
+    console.log(expression);
   }
 });
 division.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
-  }
-  else {
+  } else {
     show = [];
     expression.push("/");
     sum.innerText = show.join("");
@@ -152,6 +148,19 @@ draw.addEventListener("click", function () {
   if (expression == [] || expression == "") {
     return 0;
   }
-  result = eval(expression.join(""))
-  sum.innerText = result;  
+  result = eval(expression.join(""));
+  sum.innerText = result;
+  expression = [];
+  expression.push(result);
+});
+window.addEventListener("keypress", function (e) {
+  if ((e.key == "Enter" && expression == []) || expression == "") {
+    return 0;
+  }
+  if ((e.key = "Enter")) {
+    result = eval(expression.join(""));
+    sum.innerText = result;
+    expression = [];
+    expression.push(result);
+  }
 });
