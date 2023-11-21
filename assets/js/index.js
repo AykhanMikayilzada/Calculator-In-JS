@@ -132,7 +132,6 @@ multiplication.addEventListener("click", function () {
     show.push("x");
     expression.push("*");
     sum.innerText = show.join("");
-    console.log(expression);
   }
 });
 division.addEventListener("click", function () {
